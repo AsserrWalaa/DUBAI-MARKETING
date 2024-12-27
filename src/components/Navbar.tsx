@@ -24,7 +24,13 @@ const AppNavbar: React.FC = () => {
       <Container className="d-flex align-items-center justify-content-between">
         {/* Logo aligned to the left */}
         <Navbar.Brand as={Link} to="/">
-          <img src={logo} alt="Logo" width="124" height="100" />
+          <img
+            src={logo}
+            alt="Logo"
+            width="90"
+            height="90"
+            className="rounded-5"
+          />
         </Navbar.Brand>
 
         {/* Navbar Toggle Button for Small Screens */}

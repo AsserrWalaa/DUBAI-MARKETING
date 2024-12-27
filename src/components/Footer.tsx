@@ -13,14 +13,14 @@ const Footer = () => {
   const { i18n } = useTranslation(); // i18n instance for language change
 
   return (
-    <footer className="py-5 mt-5">
+    <footer className="py-5 mt-5 ">
       <Container>
-        <Row className="mt-5 text-center text-sm-start">
+        <Row className="mt-5 text-center text-sm-start ">
           {/* Added text-center for small screens */}
           {/* Column 1 */}
           <Col md={3} sm={6} className="mx-auto">
             {/* Centered using mx-auto */}
-            <img src={footerLogo} alt="footerLogo" width={150} height={150} />
+            <img src={footerLogo} alt="footerLogo" width={130} height={130} />
           </Col>
           {/* Column 2 */}
           <Col md={3} sm={6} className="mb-3 mx-auto">
