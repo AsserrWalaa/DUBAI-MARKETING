@@ -41,7 +41,7 @@ const About = () => {
         </p>
         <p className="fs-3 py-3">
           {i18n.t(
-            "نحن ندرك أهمية الحفاظ على بيئة نظيفة وصحية، وهدفنا مساعدتك في تحقيق أعلى معايير النظافة. تعاون معنا للحصول على خدمات تعزز سمعة عقارك وتمنح ضيوفك تجربة لا تُنسى."
+            "We understand the importance of a spotless and hygienic space, and our goal is to help you maintain the highest standards of cleanliness. Partner with us for services that enhance your property's reputation and give your guests an unforgettable experience."
           )}
         </p>
       </div>
