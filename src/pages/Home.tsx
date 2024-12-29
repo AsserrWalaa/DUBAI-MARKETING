@@ -34,7 +34,6 @@ import AppointmentForm from "../components/Appointment";
 import { useTranslation } from "react-i18next";
 import "../locales/en.json";
 import "../locales/ar.json";
-import { Row } from "react-bootstrap";
 
 const Home = () => {
   const { i18n } = useTranslation(); // i18n instance for language change
