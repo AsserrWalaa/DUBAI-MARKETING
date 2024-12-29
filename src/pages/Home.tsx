@@ -155,7 +155,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-        );
       </section>
       {/* end of section */}
       {/* Our Service Gallery*/}
