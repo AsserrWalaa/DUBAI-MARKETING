@@ -20,8 +20,7 @@ import room5 from "../assets/5.png";
 import room6 from "../assets/6.png";
 import room7 from "../assets/7.png";
 import why from "../assets/Why Choose Us.png";
-import WhatsappButton from "../assets/whtasapp.png";
-import Call from "../assets/call.png";
+import Fixed from "../components/FixedButtons";
 
 // bootstrap imports
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -317,14 +316,7 @@ const Home = () => {
       </section>
       {/* end of section */}
       {/* fixed buttons */}
-      <div className="fixed-buttons">
-        <button className="border-0 rounded-5 bg-transparent z-3">
-          <img src={WhatsappButton} alt="" />
-        </button>
-        <button className="border-0 rounded-5  z-3">
-          <img src={Call} alt="" />
-        </button>
-      </div>
+      <Fixed />
       {/* Footer section */}
       <Footer />
     </>
