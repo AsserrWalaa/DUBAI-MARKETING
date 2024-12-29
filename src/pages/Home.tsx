@@ -26,6 +26,7 @@ import Call from "../assets/call.png";
 // bootstrap imports
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap";
+import { Card } from "react-bootstrap";
 
 // appointmet
 import AppointmentForm from "../components/Appointment";
@@ -34,6 +35,29 @@ import AppointmentForm from "../components/Appointment";
 import { useTranslation } from "react-i18next";
 import "../locales/en.json";
 import "../locales/ar.json";
+
+const sections = [
+  {
+    id: "professional",
+    image: Professional, // Replace with the actual import or path
+    textKey: "professional_tools",
+  },
+  {
+    id: "coordinating",
+    image: Coordinating, // Replace with the actual import or path
+    textKey: "coordinating_place",
+  },
+  {
+    id: "cleaning",
+    image: Cleaning, // Replace with the actual import or path
+    textKey: "cleaning_bathrooms",
+  },
+  {
+    id: "completeCleaning",
+    image: CompleteCleaning, // Replace with the actual import or path
+    textKey: "complete_cleaning",
+  },
+];
 
 const Home = () => {
   const { i18n } = useTranslation(); // i18n instance for language change
@@ -49,96 +73,89 @@ const Home = () => {
       </div>
       {/* pics */}
       <section className="pt-5 d-flex justify-content-center flex-wrap container">
-        {/* Left Section */}
-        <div className="col-12 col-sm-12 col-md-12 col-lg-8 mb-4 d-flex justify-content-center align-items-center gap-2 flex-wrap">
-          <div className="kitchen mb-3 col-8 col-md-6 col-lg-5">
-            <div>
+        <div className="row justify-content-center w-100">
+          {/* Left Section */}
+          <div className="col-12 col-md-6 col-lg-8 mb-4 d-flex flex-column align-items-center">
+            <div className="d-flex gap-2 justify-content-center w-100">
+              {/* First Row */}
+              <div className="kitchen d-flex flex-column align-items-center w-100">
+                <img
+                  src={kitchen}
+                  alt="kitchen"
+                  className="img-fluid"
+                  width={300}
+                />
+                <p className="pt-3 text-dark text-center">
+                  {i18n.t("kitchen_cleaning")}
+                </p>
+              </div>
+              <div className="washing d-flex flex-column align-items-center w-100">
+                <img
+                  src={washing}
+                  alt="washing"
+                  className="img-fluid"
+                  width={300}
+                />
+                <p className="pt-3 text-dark text-center">
+                  {i18n.t("washing_dishes")}
+                </p>
+              </div>
+            </div>
+            <div className="d-flex gap-2 justify-content-center w-100">
+              {/* Second Row */}
+              <div className="changing d-flex flex-column align-items-center w-100">
+                <img
+                  src={changing}
+                  alt="changing"
+                  className="img-fluid"
+                  width={300}
+                />
+                <p className="pt-3 text-dark text-center">
+                  {i18n.t("changing_sheets")}
+                </p>
+              </div>
+              <div className="Wash d-flex flex-column align-items-center w-100">
+                <img src={Wash} alt="Wash" className="img-fluid" width={300} />
+                <p className="pt-3 text-dark text-center">
+                  {i18n.t("wash_surfaces")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center align-items-center">
+            <div className="compelete d-flex flex-column align-items-center mb-3">
               <img
-                src={kitchen}
-                alt="kitchen"
+                src={compelete}
+                alt="compelete"
                 className="img-fluid"
                 width={300}
               />
-              <p className="pt-3 text-dark text-center">
-                {i18n.t("kitchen_cleaning")}
+              <p className="pt-3 text-center text-dark">
+                {i18n.t("complete_sterilization")}
               </p>
             </div>
           </div>
-          <div className="washing mb-3 col-8 col-md-6 col-lg-5">
-            <img
-              src={washing}
-              alt="washing"
-              className="img-fluid"
-              width={300}
-            />
-            <p className="pt-3 text-dark text-center">
-              {i18n.t("washing_dishes")}
-            </p>
-          </div>
-          <div className="changing mb-3 col-8 col-md-6 col-lg-5">
-            <img
-              src={changing}
-              alt="changing"
-              className="img-fluid"
-              width={300}
-            />
-            <p className="pt-3 text-dark text-center">
-              {i18n.t("changing_sheets")}
-            </p>
-          </div>
-          <div className="Wash mb-3 col-8 col-md-6 col-lg-5">
-            <img src={Wash} alt="Wash" className="img-fluid" width={300} />
-            <p className="pt-3 text-dark text-center">
-              {i18n.t("wash_surfaces")}
-            </p>
-          </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center align-items-center ">
-          <div className="compelete mb-3">
-            <img
-              src={compelete}
-              alt="compelete"
-              className="img-fluid"
-              width={300}
-            />
-            <p className="pt-3 text-center text-dark">
-              {i18n.t("complete_sterilization")}
-            </p>
-          </div>
         </div>
         {/* two */}
-        <div className="row justify-content-center pt-5 gap-5">
-          {/* Professional Section */}
-          <div className="Professional col-12 col-sm-12 col-md-6 col-lg-3 d-flex flex-column align-items-center mb-5">
-            <img src={Professional} alt="Professional" width={300} />
-            <p className="pt-3 text-center text-dark">
-              {i18n.t("professional_tools")}
-            </p>
-          </div>
-          {/* Coordinating Section */}
-          <div className="Coordinating col-12 col-sm-12 col-md-6 col-lg-3 d-flex flex-column align-items-center mb-5">
-            <img src={Coordinating} alt="Coordinating" width={300} />
-            <p className="pt-3 text-center text-dark">
-              {i18n.t("coordinating_place")}
-            </p>
-          </div>
-          {/* Cleaning Section */}
-          <div className="Cleaning col-12 col-sm-12 col-md-6 col-lg-3 d-flex flex-column align-items-center mb-5">
-            <img src={Cleaning} alt="Cleaning" width={300} />
-            <p className="pt-3 text-center text-dark">
-              {i18n.t("cleaning_bathrooms")}
-            </p>
-          </div>
-          {/* Complete Cleaning Section */}
-          <div className="CompleteCleaning col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center justify-content-center mb-5">
-            <img src={CompleteCleaning} alt="CompleteCleaning" width={300} />
-            <p className="pt-3 text-center text-dark">
-              {i18n.t("complete_cleaning")}
-            </p>
-          </div>
+        <div className="row justify-content-center pt-3 gap-5 d-flex">
+          {sections.map((section) => (
+            <div
+              key={section.id}
+              className="col-12 col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center">
+              <Card style={{ width: "18rem" }} className="border-0">
+                <Card.Img variant="top" src={section.image} />
+                <Card.Body className="text-center">
+                  <Card.Text className="text-dark">
+                    {i18n.t(section.textKey)}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          ))}
         </div>
+        );
       </section>
       {/* end of section */}
       {/* Our Service Gallery*/}
@@ -302,10 +319,10 @@ const Home = () => {
       {/* end of section */}
       {/* fixed buttons */}
       <div className="fixed-buttons">
-        <button className="border-0 bg-transparent z-3">
+        <button className="border-0 rounded-5 bg-transparent z-3">
           <img src={WhatsappButton} alt="" />
         </button>
-        <button className="border-0 bg-transparent z-3">
+        <button className="border-0 rounded-5  z-3">
           <img src={Call} alt="" />
         </button>
       </div>
