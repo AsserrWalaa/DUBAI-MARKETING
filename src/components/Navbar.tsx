@@ -27,8 +27,8 @@ const AppNavbar: React.FC = () => {
           <img
             src={logo}
             alt="Logo"
-            width="90"
-            height="90"
+            width="80"
+            height="80"
             className="rounded-5"
           />
         </Navbar.Brand>

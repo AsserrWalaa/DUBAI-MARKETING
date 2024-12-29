@@ -34,6 +34,7 @@ import AppointmentForm from "../components/Appointment";
 import { useTranslation } from "react-i18next";
 import "../locales/en.json";
 import "../locales/ar.json";
+import { Row } from "react-bootstrap";
 
 const Home = () => {
   const { i18n } = useTranslation(); // i18n instance for language change
@@ -53,26 +54,41 @@ const Home = () => {
         <div className="col-12 col-sm-12 col-md-12 col-lg-8 mb-4 d-flex justify-content-center align-items-center gap-2 flex-wrap">
           <div className="kitchen mb-3 col-8 col-md-6 col-lg-5">
             <div>
-              <img src={kitchen} alt="kitchen" className="img-fluid" />
+              <img
+                src={kitchen}
+                alt="kitchen"
+                className="img-fluid"
+                width={300}
+              />
               <p className="pt-3 text-dark text-center">
                 {i18n.t("kitchen_cleaning")}
               </p>
             </div>
           </div>
           <div className="washing mb-3 col-8 col-md-6 col-lg-5">
-            <img src={washing} alt="washing" className="img-fluid" />
+            <img
+              src={washing}
+              alt="washing"
+              className="img-fluid"
+              width={300}
+            />
             <p className="pt-3 text-dark text-center">
               {i18n.t("washing_dishes")}
             </p>
           </div>
           <div className="changing mb-3 col-8 col-md-6 col-lg-5">
-            <img src={changing} alt="changing" className="img-fluid" />
+            <img
+              src={changing}
+              alt="changing"
+              className="img-fluid"
+              width={300}
+            />
             <p className="pt-3 text-dark text-center">
               {i18n.t("changing_sheets")}
             </p>
           </div>
           <div className="Wash mb-3 col-8 col-md-6 col-lg-5">
-            <img src={Wash} alt="Wash" className="img-fluid" />
+            <img src={Wash} alt="Wash" className="img-fluid" width={300} />
             <p className="pt-3 text-dark text-center">
               {i18n.t("wash_surfaces")}
             </p>
@@ -80,10 +96,15 @@ const Home = () => {
         </div>
 
         {/* Right Section */}
-        <div className="col-12 col-sm-12 col-md-12 col-lg-4 mb-4 d-flex justify-content-center align-items-center">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center align-items-center ">
           <div className="compelete mb-3">
-            <img src={compelete} alt="compelete" width={300} />
-            <p className="pt-3 fs-6 text-dark">
+            <img
+              src={compelete}
+              alt="compelete"
+              className="img-fluid"
+              width={300}
+            />
+            <p className="pt-3 text-center text-dark">
               {i18n.t("complete_sterilization")}
             </p>
           </div>
@@ -91,36 +112,38 @@ const Home = () => {
         {/* two */}
         <div className="row justify-content-center pt-5 gap-5">
           {/* Professional Section */}
-          <div className="Professional col-lg-3 col-md-6 col-sm-12 d-flex flex-column align-items-center mb-5">
+          <div className="Professional col-12 col-sm-12 col-md-6 col-lg-3 d-flex flex-column align-items-center mb-5">
             <img src={Professional} alt="Professional" width={300} />
-            <p className="pt-3 fs-6 text-dark">
+            <p className="pt-3 text-center text-dark">
               {i18n.t("professional_tools")}
             </p>
           </div>
           {/* Coordinating Section */}
-          <div className="Coordinating col-lg-3 col-md-6 col-sm-12 d-flex flex-column align-items-center mb-5">
+          <div className="Coordinating col-12 col-sm-12 col-md-6 col-lg-3 d-flex flex-column align-items-center mb-5">
             <img src={Coordinating} alt="Coordinating" width={300} />
-            <p className="pt-3 fs-6 text-dark">
+            <p className="pt-3 text-center text-dark">
               {i18n.t("coordinating_place")}
             </p>
           </div>
           {/* Cleaning Section */}
-          <div className="Cleaning col-lg-3 col-md-6 col-sm-12 d-flex flex-column align-items-center mb-5">
+          <div className="Cleaning col-12 col-sm-12 col-md-6 col-lg-3 d-flex flex-column align-items-center mb-5">
             <img src={Cleaning} alt="Cleaning" width={300} />
-            <p className="pt-3 fs-6 text-dark">
+            <p className="pt-3 text-center text-dark">
               {i18n.t("cleaning_bathrooms")}
             </p>
           </div>
           {/* Complete Cleaning Section */}
-          <div className="CompleteCleaning col-lg-3 col-md-6 col-sm-12 d-flex flex-column align-items-center mb-5">
+          <div className="CompleteCleaning col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center justify-content-center mb-5">
             <img src={CompleteCleaning} alt="CompleteCleaning" width={300} />
-            <p className="pt-3 fs-6 text-dark">{i18n.t("complete_cleaning")}</p>
+            <p className="pt-3 text-center text-dark">
+              {i18n.t("complete_cleaning")}
+            </p>
           </div>
         </div>
       </section>
       {/* end of section */}
       {/* Our Service Gallery*/}
-      <div className="text-center pt-5">
+      <div className="text-center ">
         <h1 className="text-dark pb-5 pt-5">{i18n.t("Our Service Gallery")}</h1>
       </div>
       <section className="container pt-5">
