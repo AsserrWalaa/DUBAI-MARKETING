@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/1-removebg-preview (3) 1.jpg";
 import { useTranslation } from "react-i18next";
-import "../style/navStyle.css"; // Import your custom CSS for additional styling
+import "../style/global.css"; // Import your custom CSS for additional styling
 
 const AppNavbar: React.FC = () => {
   const { i18n } = useTranslation();
