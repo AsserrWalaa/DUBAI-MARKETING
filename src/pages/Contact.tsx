@@ -20,7 +20,7 @@ const ContactUS = () => {
         <div className="hero-content">
           <Navbar />
           <div className="heroText">
-            <h1 className="text-center text-white ">{i18n.t("Call Us")}</h1>
+            <h1 className="text-center text-white ">{i18n.t("Contact Us")}</h1>
           </div>
         </div>
       </div>

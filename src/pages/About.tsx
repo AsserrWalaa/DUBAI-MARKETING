@@ -22,21 +22,21 @@ const About = () => {
         </div>
       </div>
       <div className="container py-5">
-        <p className="text-start fw-bold text-secondary fs-4">
+        <p className="text-start fw-bold text-secondary fs-5">
           {i18n.t(
             "At Dubai Hotel Service, we are dedicated to providing top-notch cleaning and sanitization services for hotels, serviced apartments, and furnished properties. Our mission is to create a clean, healthy, and welcoming environment for your guests, ensuring their satisfaction and comfort."
           )}
         </p>
-        <h3 className="py-3">
+        <h4 className="py-3">
           {i18n.t(
             "With a team of experienced professionals and a commitment to excellence, we specialize in:"
           )}
-        </h3>
-        <p className="py-2 text-secondary fw-bold fs-4"></p>
-        <p className="py-2 text-secondary fw-bold fs-4">
+        </h4>
+        <p className="py-2 text-secondary fw-bold fs-5"></p>
+        <p className="py-2 text-secondary fw-bold fs-5">
           {i18n.t("Deep sanitization to maintain hygiene standards")}
         </p>
-        <p className="py-2 text-secondary fw-bold fs-4">
+        <p className="py-2 text-secondary fw-bold fs-5">
           {i18n.t("Reliable and efficient service to meet your schedule")}
         </p>
         <p className="fs-3 py-3">

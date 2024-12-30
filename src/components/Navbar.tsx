@@ -1,75 +1,100 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/1-removebg-preview (3) 1.jpg";
 import { useTranslation } from "react-i18next";
+import "../style/navStyle.css"; // Import your custom CSS for additional styling
 
 const AppNavbar: React.FC = () => {
-  const { i18n } = useTranslation(); // i18n instance for language change
+  const { i18n } = useTranslation();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const location = useLocation();
 
-  // Function to handle language change
   const handleLanguageChange = (lng: string) => {
-    if (lng == "ar") {
-      document.getElementsByTagName("html")[0].setAttribute("lang", "ar");
-      document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
+    if (lng === "ar") {
+      document.documentElement.setAttribute("lang", "ar");
+      document.documentElement.setAttribute("dir", "rtl");
     } else {
-      document.getElementsByTagName("html")[0].setAttribute("lang", "en");
-      document.getElementsByTagName("html")[0].setAttribute("dir", "ltr");
+      document.documentElement.setAttribute("lang", "en");
+      document.documentElement.setAttribute("dir", "ltr");
     }
-    i18n.changeLanguage(lng); // Switch the language to the selected one
+    i18n.changeLanguage(lng);
+  };
+
+  const handleToggle = (isOpen: boolean) => {
+    setShowDropdown(isOpen);
   };
 
   return (
     <Navbar bg="transparent" expand="lg" className="shadow-none">
       <Container className="d-flex align-items-center justify-content-between">
-        {/* Logo aligned to the left */}
+        {/* Logo */}
         <Navbar.Brand as={Link} to="/">
           <img
             src={logo}
             alt="Logo"
-            width="80"
-            height="80"
-            className="rounded-5"
+            width="90"
+            height="90"
+            className="rounded-5 mx-5"
           />
         </Navbar.Brand>
 
-        {/* Navbar Toggle Button for Small Screens */}
+        {/* Navbar Toggle */}
         <Navbar.Toggle aria-controls="navbar-nav" />
 
-        {/* Navbar Collapse for Links */}
+        {/* Navbar Collapse */}
         <Navbar.Collapse
           id="navbar-nav"
-          className="justify-content-center text-center">
+          className="justify-content-center text-center mx-5">
           <Nav className="d-flex align-items-center mx-auto justify-content-center">
-            {/* Navbar Links */}
-            <Nav.Link as={Link} to="/" className="text-light fs-5 me-2 ">
+            {/* Nav Links with active state */}
+            <Nav.Link
+              as={Link}
+              to="/"
+              className={`fs-5 me-2 ${
+                location.pathname === "/" ? "active" : ""
+              }`}>
               {i18n.t("home")}
             </Nav.Link>
-            <Nav.Link as={Link} to="/about" className="text-light fs-5 me-2">
+            <Nav.Link
+              as={Link}
+              to="/about"
+              className={`fs-5 me-2 ${
+                location.pathname === "/about" ? "active" : ""
+              }`}>
               {i18n.t("about")}
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="text-light fs-5 me-2">
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              className={`fs-5 me-2 ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}>
               {i18n.t("contact")}
             </Nav.Link>
-            <Nav.Link as={Link} to="/our-team" className="text-light fs-5 me-2">
+            <Nav.Link
+              as={Link}
+              to="/our-team"
+              className={`fs-5 me-2 ${
+                location.pathname === "/our-team" ? "active" : ""
+              }`}>
               {i18n.t("our_team")}
             </Nav.Link>
           </Nav>
 
-          {/* Dropdown aligned to the right */}
-          <Nav className="ms-auto">
+          {/* Dropdowns */}
+          <Nav className="ms-lg-auto">
+            {/* Language Dropdown */}
             <NavDropdown
-              className="fs-5"
+              className="fs-5 ms-lg-5"
               title={<span>{i18n.t("language")}</span>}
-              menuVariant="dark">
-              <NavDropdown.Item
-                onClick={() => handleLanguageChange("en")}
-                className="text-light">
+              menuVariant="light"
+              show={showDropdown}
+              onToggle={handleToggle}>
+              <NavDropdown.Item onClick={() => handleLanguageChange("en")}>
                 English
               </NavDropdown.Item>
-              <NavDropdown.Item
-                onClick={() => handleLanguageChange("ar")}
-                className="text-light">
+              <NavDropdown.Item onClick={() => handleLanguageChange("ar")}>
                 Arabic
               </NavDropdown.Item>
             </NavDropdown>

@@ -1,11 +1,11 @@
 .textPrimary {
-  color: #006f73;
+  color: #006f73 !important;
 }
 /* Start Heros */
 .hero-two {
   position: relative;
   background-image: url(../assets/hero2.jpeg);
-  height: 100vh;
+  height: 80vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,32 +28,45 @@
 
 .callUs {
   background: transparent;
-  border: #006f73 3px solid !important ;
-  color: #006f73;
+  border: #006f73 3px solid !important;
+  color: #006f73 !important;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.callUs:hover {
+  background: #006f73 !important;
+  color: #ffffff !important; /* Change text color to white on hover */
+}
+
 /* End Heros */
 
 /* Start Navbar */
-/* Target the dropdown toggle arrow and change it to white */
-/* Target the nav links within the Navbar specifically */
 /* Default color for all nav links */
 .navbar-nav .nav-link {
-  color: #bebcbc !important;
-  transition: color 0.3s ease-in-out; /* Smooth transition for hover or active state */
+  color: #cfcfcf !important;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for hover, active state, and scale */
 }
 
-/* Change color on hover */
+/* Change color and add scale effect on hover */
 .navbar-nav .nav-link:hover {
   color: #006f73 !important;
+  transform: scale(1.5); /* Slightly scale up the link */
+  z-index: 1;
 }
 
-/* Change color for active link */
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:active {
+/* Change color for active/checked link */
+.navbar-nav .nav-link.active {
   color: #006f73 !important;
   font-weight: bold !important; /* Optional: Make active links bold */
 }
 
+/* Target the dropdown toggle arrow and change it to white */
+.navbar-nav .nav-link.dropdown-toggle::after {
+  color: black !important; /* Ensure the arrow color is white */
+  border-top-color: black !important; /* Change the arrow's border color */
+  border-bottom-color: transparent !important; /* Hide the bottom border */
+  margin-left: 20px;
+}
 /*End Navbar */
 
 /* Start Home */

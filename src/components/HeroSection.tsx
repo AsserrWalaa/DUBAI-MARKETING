@@ -14,13 +14,13 @@ const Hero = () => {
           <h1 className="textPrimary my-3">
             {i18n.t("A unique hotel experience for your apartment")}
           </h1>
-          <h2 className="pt-3 my-5" style={{ color: "#676767" }}>
+          <h2 className="pt-3 mt-1 " style={{ color: "#676767" }}>
             {i18n.t("Health and cleanliness")}
           </h2>
           <a
             href="tel:+201066607106"
-            className="w-50 fs-3 px-4 rounded-3 border-3 bg-transparent callUs text-decoration-none">
-            <button className="w-100 h-100 border-0 bg-transparent text-dark">
+            className="w-50 fs-3 px-4 mt-3 rounded-3 border-3 bg-transparent callUs text-decoration-none">
+            <button className="w-100 h-100 border-0 bg-transparent">
               {i18n.t("Call Us")}
             </button>
           </a>
