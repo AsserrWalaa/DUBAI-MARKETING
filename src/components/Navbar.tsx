@@ -35,7 +35,7 @@ const AppNavbar: React.FC = () => {
             alt="Logo"
             width="90"
             height="90"
-            className="rounded-5 mx-5"
+            className="rounded-5 me-5"
           />
         </Navbar.Brand>
 
