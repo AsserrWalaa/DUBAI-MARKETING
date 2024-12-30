@@ -13,9 +13,9 @@ const Footer = () => {
   const { i18n } = useTranslation(); // i18n instance for language change
 
   return (
-    <footer className="py-5 mt-5 ">
+    <footer className="py-5 mt-5">
       <Container>
-        <Row className="mt-5 text-center text-sm-start ">
+        <Row className="mt-5 text-center text-sm-start">
           {/* Added text-center for small screens */}
           {/* Column 1 */}
           <Col md={3} sm={6} className="mx-auto">
@@ -75,12 +75,18 @@ const Footer = () => {
               <div className="d-flex justify-content-center mt-4">
                 {/* Centered icons */}
                 <img src={fb} alt="fb" className="me-3" />
-                <img
-                  src={wp}
-                  alt="wp"
-                  width="50"
-                  className="mx-3 bg-success rounded-5"
-                />
+                <a
+                  href="https://wa.me/201066607106"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={wp}
+                    alt="wp"
+                    width="50"
+                    className="mx-3 bg-success rounded-5"
+                  />
+                </a>
                 <img src={ig} alt="ig" className="mx-3" />
               </div>
             </ul>
